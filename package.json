@@ -3,14 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "classnames": "^2.3.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "npm run watch:css && react-scripts start",
-    "build": "npm run build:css && react-scripts build",
+    "build:icons": "svgr --no-dimensions src/assets/svg -d src/components/atoms/Icons/ --svg-props height=100%",
+    "start": "npm run build:icons && npm run watch:css && react-scripts start",
+    "build": "npm run build:icons && npm run build:css && react-scripts build",
     "test": "jest",
     "eject": "react-scripts eject",
     "build:css": "postcss src/assets/tailwind.css -o src/assets/main.css",
@@ -38,6 +40,8 @@
   "devDependencies": {
     "@babel/preset-env": "^7.14.1",
     "@babel/preset-react": "^7.13.13",
+    "@svgr/cli": "^5.5.0",
+    "@svgr/core": "^5.5.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",

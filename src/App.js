@@ -1,8 +1,8 @@
 import React from 'react';
-import Register from './pages/Register';
+import Register from './components/pages/Register';
 
 const App = () => {
-  return <Register className="container mx-auto" />;
+  return <Register className="container mx-auto min-h-full" />;
 };
 
 export default App;
